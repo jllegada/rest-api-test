@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Enum\User\Type;
 use App\Enum\User\Verification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -26,7 +27,7 @@ class User extends Authenticatable
         'password',
         'verified',
         'verified_token',
-        'admin',
+        'type',
     ];
 
     /**
@@ -48,7 +49,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'verified'          => Verification::class,
-        'admin'             => 'boolean',
+        'type'              => Type::class,
     ];
 
     public function buyer(): HasOne
