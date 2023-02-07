@@ -3,7 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Enum\User\Verification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -21,6 +24,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'verified',
+        'verified_token',
+        'admin',
     ];
 
     /**
@@ -31,6 +37,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'verified_token',
     ];
 
     /**
@@ -40,5 +47,17 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'verified'          => Verification::class,
+        'admin'             => 'boolean',
     ];
+
+    public function buyer(): HasOne
+    {
+        return $this->hasOne(Buyer::class);
+    }
+
+    public function seller(): HasOne
+    {
+        return $this->hasOne(Seller::class);
+    }
 }
