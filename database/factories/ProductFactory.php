@@ -3,8 +3,7 @@
 namespace Database\Factories;
 
 use App\Enum\Product\Status;
-use App\Models\Category;
-use App\Models\Seller;
+use App\Models\{Category, Seller};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +19,7 @@ class ProductFactory extends Factory
     public function definition()
     {
         $category = Category::inRandomOrder()->first() ?? Category::factory()->create();
-        $seller   = Seller::inRandomOrder()->first() ?? Seller::factory()->create();
+        $seller   = Seller::inRandomOrder()->first()   ?? Seller::factory()->create();
 
         return [
             'category_id' => $category->id,

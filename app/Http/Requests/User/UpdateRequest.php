@@ -11,10 +11,10 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'     => ['sometimes', 'string','max:225'],
+            'name'     => ['sometimes', 'string', 'max:225'],
             'email'    => ['sometimes', 'string', 'email:rfc,dns', 'max:255'],
             'verified' => ['sometimes', 'boolean'],
-            'type'     => ['sometimes', 'string', Rule::in(Type::getValues())], 
+            'type'     => ['sometimes', 'string', Rule::in(Type::getValues())],
         ];
     }
 }

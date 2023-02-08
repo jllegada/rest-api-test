@@ -20,7 +20,7 @@ class BuyerFactory extends Factory
         $user = User::inRandomOrder()->first() ?? User::factory()->create();
 
         return [
-            'user_id' => $user->id
+            'user_id' => $user->id,
         ];
     }
 }

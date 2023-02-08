@@ -10,7 +10,7 @@ class AdminCreatesUser
     public function execute(array $attributes): User
     {
         $user = User::create([
-            ...$attributes, 
+            ...$attributes,
             'password' => Hash::make('temp_password'),
         ]);
 

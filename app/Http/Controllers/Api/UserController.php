@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Actions\Admin\AdminCreatesUser;
-use App\Actions\Admin\AdminUpdatesUser;
+use App\Actions\Admin\{AdminCreatesUser, AdminUpdatesUser};
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\StoreRequest;
-use App\Http\Requests\User\UpdateRequest;
-use App\Http\Resources\UserCollection;
-use App\Http\Resources\UserResource;
+use App\Http\Requests\User\{StoreRequest, UpdateRequest};
+use App\Http\Resources\{UserCollection, UserResource};
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\{Request, Response};
 
 class UserController extends Controller
 {
@@ -35,16 +31,16 @@ class UserController extends Controller
     }
 
     public function update(UpdateRequest $request, User $user, AdminUpdatesUser $updates): UserResource
-    {        
+    {
         $user = $updates->execute($user, $request->validated());
-    
+
         return new UserResource($user);
     }
 
     public function destroy(Request $request, User $user): Response
     {
         $user->delete();
-        
+
         return response()->noContent();
     }
 }

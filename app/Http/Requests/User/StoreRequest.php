@@ -11,10 +11,10 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'     => ['required', 'string','max:225'],
+            'name'     => ['required', 'string', 'max:225'],
             'email'    => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users'],
             'verified' => ['required', 'boolean'],
-            'type'     => ['required', 'string', Rule::in(Type::getValues())], 
+            'type'     => ['required', 'string', Rule::in(Type::getValues())],
         ];
     }
 }

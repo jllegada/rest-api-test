@@ -4,12 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Buyer;
-use App\Models\Category;
-use App\Models\Product;
-use App\Models\Seller;
-use App\Models\Transaction;
-use App\Models\User;
+use App\Models\{Buyer, Category, Product, Seller, Transaction, User};
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

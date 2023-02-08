@@ -21,5 +21,4 @@ class CategoryFactory extends Factory
             'description' => $this->faker->paragraph(),
         ];
     }
-
 }

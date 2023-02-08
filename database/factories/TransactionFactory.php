@@ -2,8 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Buyer;
-use App\Models\Product;
+use App\Models\{Buyer, Product};
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +17,7 @@ class TransactionFactory extends Factory
      */
     public function definition()
     {
-        $buyer   = Buyer::inRandomOrder()->first() ?? Buyer::factory()->create();
+        $buyer   = Buyer::inRandomOrder()->first()     ?? Buyer::factory()->create();
         $product = Product::inRandomOrder()->first() ?? Product::factory()->create();
 
         return [

@@ -1,0 +1,20 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "single_import_per_statement": false,
+        "group_import": true,
+        "array_indentation": true,
+        "no_unneeded_import_alias": true,
+        "binary_operator_spaces": {
+            "default": "align_single_space_minimal"
+        },
+        "class_attributes_separation": {
+            "elements": {
+                "const": "only_if_meta",
+                "property": "only_if_meta",
+                "trait_import": "one"
+            }
+        }
+    },
+    "exclude": ["build"]
+}

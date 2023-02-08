@@ -2,8 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Enum\User\Type;
-use App\Enum\User\Verification;
+use App\Enum\User\{Type, Verification};
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

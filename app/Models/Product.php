@@ -5,16 +5,13 @@ namespace App\Models;
 use App\Enum\Product\Status;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 
 class Product extends Model
 {
     use HasFactory;
-
     protected $fillable = ['category_id', 'user_id', 'name', 'description', 'status', 'seller_id'];
-
-    protected $casts = [
+    protected $casts    = [
         'status' => Status::class,
     ];
 

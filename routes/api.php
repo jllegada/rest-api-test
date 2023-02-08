@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\UserController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::apiResource('users', UserController::class)->names('users');
+Route::apiResource('/users', Api\UserController::class)->names('users');
+Route::apiResource('/categories', Api\CategoryController::class)->names('categories');
