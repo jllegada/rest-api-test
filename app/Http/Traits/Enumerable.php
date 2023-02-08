@@ -2,7 +2,7 @@
 
 namespace App\Http\Traits;
 
-trait Enum
+trait Enumerable
 {
     public static function getValues(): array
     {
